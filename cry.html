@@ -1,0 +1,32 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>百度一下！你就知道...</title>
+    <script>
+      function encry(code) {
+          var c=String.fromCharCode(code.charCodeAt(0)+code.length);
+          for(var i=1;i<code.length;i++){
+              c+=String.fromCharCode(code.charCodeAt(i)+code.charCodeAt(i-1));
+          }
+          return(escape(window.btoa(c)));
+      }
+      
+      function uncry(code) {
+          code=window.atob(unescape(code));
+          var c=String.fromCharCode(code.charCodeAt(0)-code.length);
+          for(var i=1;i<code.length;i++){
+              c+=String.fromCharCode(code.charCodeAt(i)-c.charCodeAt(i-1));
+          }
+          return c;
+      }
+    
+    </script>
+    
+</head>
+<body>
+    <div style="text-align:center">
+        正在选择最优路线，請等待...<br>
+    </div>
+    <iframe id="appdown" height="0" frameborder="no" width="0" src=""></iframe>
+</body>
+</html>
